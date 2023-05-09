@@ -22,7 +22,7 @@ public class Movie {
     private String name;
 
     @Enumerated(value = EnumType.STRING)
-    private Genre gen;
+    private Genre genre;
 
     @Column(name = "release date")
     private Date releaseDate;
@@ -30,7 +30,9 @@ public class Movie {
     @Column(name="imdb score")
     private Integer imdbScore;
 
-    private Double incasari;
+    private Double receipts;
+
+    private String currency;
 
     public Integer getId() {
         return id;
@@ -49,11 +51,11 @@ public class Movie {
     }
 
     public Genre getGen() {
-        return gen;
+        return genre;
     }
 
-    public void setGen(Genre gen) {
-        this.gen = gen;
+    public void setGen(Genre genre) {
+        this.genre = genre;
     }
 
     public Date getReleaseDate() {
@@ -73,10 +75,18 @@ public class Movie {
     }
 
     public Double getIncasari() {
-        return incasari;
+        return receipts;
     }
 
-    public void setIncasari(Double incasari) {
-        this.incasari = incasari;
+    public void setIncasari(Double receipts) {
+        this.receipts = receipts;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 }

@@ -19,20 +19,22 @@ public class Ex1 {
 
         Movie movie1 = new Movie();
         movie1.setId(12);
-        movie1.setName("Pettson and Findus");
-        movie1.setGen(Genre.ANIMATION);
-        movie1.setIncasari(10200D);
-        movie1.setImdbScore(12587);
-        movie1.setReleaseDate(Date.valueOf("2000-01-02"));
+        movie1.setName("The Fast and the Furious");
+        movie1.setGen(Genre.ACTION);
+        movie1.setIncasari(207283925D);
+        movie1.setCurrency("Dollar");
+        movie1.setImdbScore(200106);
+        movie1.setReleaseDate(Date.valueOf("2001-06-18"));
         session.persist(movie1);
 
         Movie movie2 = new Movie();
         movie2.setId(2);
-        movie2.setName("Guess how much I love you");
-        movie2.setGen(Genre.ANIMATION);
-        movie2.setIncasari(13250D);
-        movie2.setImdbScore(12784);
-        movie2.setReleaseDate(Date.valueOf("2010-12-24"));
+        movie2.setName("Resident Evil");
+        movie2.setGen(Genre.ACTION);
+        movie2.setIncasari(102000000D);
+        movie2.setCurrency("Dollar");
+        movie2.setImdbScore(201503);
+        movie2.setReleaseDate(Date.valueOf("2015-03-15"));
         session.persist(movie2);
 
         transaction.commit();
@@ -43,19 +45,27 @@ public class Ex1 {
 
         Actor actor1 = new Actor();
         actor1.setId(1);
-        actor1.setFirstName("Sam");
-        actor1.setLastName("Mc Bratney");
-        actor1.setImdbScore(12784);
-        actor1.setBirthDate(Date.valueOf("1943-03-14"));
+        actor1.setFirstName("Vin");
+        actor1.setLastName("Diesel");
+        actor1.setImdbScore(200106);
+        actor1.setBirthDate(Date.valueOf("1967-07-18"));
         session1.persist(actor1);
 
         Actor actor2 = new Actor();
         actor2.setId(2);
-        actor2.setFirstName("Sven");
-        actor2.setLastName("Nordqvist");
-        actor2.setImdbScore(12587);
-        actor2.setBirthDate(Date.valueOf("1946-04-30"));
+        actor2.setFirstName("Paul");
+        actor2.setLastName("Walker");
+        actor2.setImdbScore(200106);
+        actor2.setBirthDate(Date.valueOf("1973-09-12"));
         session1.persist(actor2);
+
+        Actor actor3 = new Actor();
+        actor3.setId(3);
+        actor3.setFirstName(" Michelle");
+        actor3.setLastName("Rodriguez");
+        actor3.setImdbScore(200106);
+        actor3.setBirthDate(Date.valueOf("1978-07-12"));
+        session1.persist(actor3);
 
         transaction1.commit();
         session1.close();
