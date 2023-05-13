@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 @Table(name= "parents")
 public class Parent {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @Column(nullable = false)

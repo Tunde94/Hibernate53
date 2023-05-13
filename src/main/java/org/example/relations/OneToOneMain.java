@@ -25,7 +25,7 @@ public class OneToOneMain {
         Food food2 = new Food(2,"Shake",true);
         session.persist(food2);
         Toy toy1 = new Toy(1,"Train");
-        Child child1 = new Child(null,"Johnny", food1,toy1);
+        Child child1 = new Child(1,"Johnny", food1,toy1);
         //salveaza si toy1 fara session.persist(toy1), pentru ca am facut cascade, cand am setat ca si foreign key----@OneToOne(cascade = {CascadeType.PERSIST})----
         session.persist(child1);
         System.out.println("Child was saved");

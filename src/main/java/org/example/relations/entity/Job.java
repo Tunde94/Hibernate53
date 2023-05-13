@@ -1,7 +1,7 @@
 package org.example.relations.entity;
 
 public enum Job {
-    PROFESOR,
+    PROFESSOR,
     ENGINEER,
     LAWYER
 }
