@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.database.DataBaseConfig;
 import org.example.entity.Car;
 import org.example.entity.Driver;
 import org.example.entity.Truck;
@@ -14,14 +15,14 @@ public class Main {
 
     public static void main(String[] args) {
 
-        SessionFactory sessionFactory = new Configuration()
+        /*SessionFactory sessionFactory = new Configuration()
                 .configure("hibernate.configuration.xml")
                 .addAnnotatedClass(Car.class)
                 .addAnnotatedClass(Truck.class)
                 .addAnnotatedClass(Driver.class)
-                .buildSessionFactory();
+                .buildSessionFactory();*/
         //deschidem sessiunea
-        Session session = sessionFactory.openSession();
+        Session session = DataBaseConfig.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
         Car car = new Car();
         car.setId(11);
@@ -41,7 +42,7 @@ public class Main {
         //inchidem sessiunea obligatoriu
         session.close();
 
-        Session session1 = sessionFactory.openSession();
+        Session session1 = DataBaseConfig.getSessionFactory().openSession();
         Transaction transaction1 = session1.beginTransaction();
         Driver d = new Driver();
         d.setId(1);

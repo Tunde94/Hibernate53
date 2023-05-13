@@ -1,5 +1,6 @@
 package org.example.exercitiu1;
 
+import org.example.database.DataBaseConfig;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -9,12 +10,12 @@ import java.sql.Date;
 
 public class Ex1 {
     public static void main(String[] args) {
-        SessionFactory sessionFactory = new Configuration()
+        /*SessionFactory sessionFactory = new Configuration()
                 .configure("hibernate.configuration.xml")
                 .addAnnotatedClass(Movie.class)
                 .addAnnotatedClass(Actor.class)
-                .buildSessionFactory();
-        Session session = sessionFactory.openSession();
+                .buildSessionFactory();*/
+        Session session = DataBaseConfig.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
 
         Movie movie1 = new Movie();
@@ -40,7 +41,7 @@ public class Ex1 {
         transaction.commit();
         session.close();
 
-        Session session1 = sessionFactory.openSession();
+        Session session1 = DataBaseConfig.getSessionFactory().openSession();
         Transaction transaction1 = session1.beginTransaction();
 
         Actor actor1 = new Actor();

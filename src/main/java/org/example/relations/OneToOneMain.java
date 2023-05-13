@@ -1,24 +1,22 @@
 package org.example.relations;
 
+import org.example.database.DataBaseConfig;
 import org.example.relations.entity.Child;
 import org.example.relations.entity.Food;
-import org.example.relations.entity.Parent;
 import org.example.relations.entity.Toy;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 
 public class OneToOneMain {
     public static void main(String[] args) {
-        SessionFactory sessionFactory = new Configuration()
+        /*SessionFactory sessionFactory = new Configuration()
                 .configure("hibernate.configuration.xml")
                 .addAnnotatedClass(Child.class)
                 .addAnnotatedClass(Parent.class)
                 .addAnnotatedClass(Food.class)
                 .addAnnotatedClass(Toy.class)
-                .buildSessionFactory();
-        Session session = sessionFactory.openSession();
+                .buildSessionFactory();*/
+        Session session = DataBaseConfig.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
         Food food1 = new Food(1,"HotDog",false);
         session.persist(food1);

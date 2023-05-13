@@ -3,22 +3,18 @@ package org.example.relations.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name= "parents")
-public class Parent {
+@Table(name = "animals")
+public class Animal {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-
-    @Column(nullable = false)
     private String name;
+    private String type;
 
-    @Enumerated(value = EnumType.STRING)
-    private Job job;
-
-    public Parent(Integer id, String name, Job job) {
+    public Animal(Integer id, String name, String type) {
         this.id = id;
         this.name = name;
-        this.job = job;
+        this.type = type;
     }
 
     public Integer getId() {
@@ -37,11 +33,11 @@ public class Parent {
         this.name = name;
     }
 
-    public Job getJob() {
-        return job;
+    public String getType() {
+        return type;
     }
 
-    public void setJob(Job job) {
-        this.job = job;
+    public void setType(String type) {
+        this.type = type;
     }
 }
