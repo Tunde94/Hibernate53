@@ -11,6 +11,5 @@
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hbm2ddl.auto">create</property> <!-- sterge tabelul, daca exista si- l creaza de la 0 cand rulam programul -->
         <property name="show_sql">true</property> <!-- mesaj in consola -->
-
     </session-factory>
 </hibernate-configuration>
