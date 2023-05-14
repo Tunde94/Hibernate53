@@ -11,10 +11,15 @@ public class Animal {
     private String name;
     private String type;
 
-    public Animal(Integer id, String name, String type) {
+    @ManyToOne(cascade = {CascadeType.PERSIST})//diferenta e directia- in Mother am folosit anotatia de One to many, in loc, aici am pus Many to One-in loc sa punem in Owner One to Many
+    @JoinColumn(name = "owner_id")
+    private Owner owner;
+
+    public Animal(Integer id, String name, String type, Owner owner) {
         this.id = id;
         this.name = name;
         this.type = type;
+        this.owner = owner;
     }
 
     public Integer getId() {
@@ -39,5 +44,13 @@ public class Animal {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
     }
 }

@@ -10,7 +10,7 @@ import java.sql.Date;
 - id
 - first name
 - last name
-- birth date
+- birthdate
 - imdb score
  */
 @Entity

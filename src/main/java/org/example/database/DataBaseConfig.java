@@ -11,6 +11,8 @@ import org.example.relations.entity.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+
+//SINGLETON
 public class DataBaseConfig {
     private static SessionFactory sessionFactory= null;
     private DataBaseConfig(){
@@ -35,6 +37,7 @@ public class DataBaseConfig {
                     .addAnnotatedClass(Toy.class)
                     .addAnnotatedClass(TvShow.class)
                     .addAnnotatedClass(Animal.class)
+                    .addAnnotatedClass(Owner.class)
                     .buildSessionFactory();
 
         }
